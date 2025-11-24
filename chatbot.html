@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Dr. HealBot - Your Virtual Medical Assistant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .chatbot-toggler {
+      position: fixed; bottom: 30px; right: 35px;
+      outline: none; border: none; height: 55px; width: 55px;
+      display: flex; cursor: pointer; align-items: center; justify-content: center;
+      border-radius: 50%; background: #724ae8; z-index: 9999;
+      transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(114,74,232,0.4);
+    }
+    .chatbot-toggler:hover { transform: scale(1.1); }
+    body.show-chatbot .chatbot-toggler { transform: rotate(90deg); }
+    .chatbot-toggler span { color: #fff; position: absolute; font-size: 28px; transition: opacity 0.3s; }
+    .chatbot-toggler span:last-child { opacity: 0; }
+    body.show-chatbot .chatbot-toggler span:first-child { opacity: 0; }
+    body.show-chatbot .chatbot-toggler span:last-child { opacity: 1; }
+    
+    .chatbot {
+      position: fixed; right: 35px; bottom: 100px; width: 420px; height: 600px;
+      background: #fff; border-radius: 15px; overflow: hidden;
+      opacity: 0; pointer-events: none; transform: scale(0.5) translateY(20px);
+      transform-origin: bottom right; z-index: 9998;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    body.show-chatbot .chatbot { opacity: 1; pointer-events: auto; transform: scale(1) translateY(0); }
+    
+    .chatbot header {
+      padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;
+      color: #fff; background: linear-gradient(135deg, #724ae8, #8b5cf6);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex-shrink: 0;
+    }
+    .chatbot header h2 { font-size: 1.2rem; font-weight: 600; }
+    .header-btns { display: flex; gap: 8px; }
+    .header-btns span { cursor: pointer; font-size: 22px; padding: 4px; border-radius: 50%; transition: background 0.2s; }
+    .header-btns span:hover { background: rgba(255,255,255,0.2); }
+    
+    .patient-info-bar {
+      background: rgba(114,74,232,0.1); padding: 8px 16px;
+      display: flex; align-items: center; gap: 8px; font-size: 0.85rem;
+      color: #724ae8; border-bottom: 1px solid #eee; flex-shrink: 0;
+    }
+    .patient-info-bar .badge { background: #4caf50; color: #fff; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; }
+    
+    .chatbox {
+      flex: 1; overflow-y: auto; padding: 20px; background: #f8f9fa;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .chatbox::-webkit-scrollbar { width: 6px; }
+    .chatbox::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+    
+    .chat { display: flex; align-items: flex-end; gap: 8px; }
+    .chat.outgoing { justify-content: flex-end; }
+    .chat .bot-icon {
+      width: 32px; height: 32px; background: #724ae8; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 18px; flex-shrink: 0;
+    }
+    .chat p {
+      padding: 12px 16px; border-radius: 16px; max-width: 80%;
+      font-size: 0.9rem; line-height: 1.5; white-space: pre-wrap;
+    }
+    .chat.incoming p { background: #fff; color: #333; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .chat.outgoing p { background: #724ae8; color: #fff; border-bottom-right-radius: 4px; }
+    .chat p.error { background: #fee; color: #c00; }
+    .chat p.thinking { animation: pulse 1.5s infinite; }
+    @keyframes pulse { 50% { opacity: 0.5; } }
+    
+    .chat-input {
+      display: flex; align-items: flex-end; gap: 8px;
+      padding: 12px 16px; background: #fff; border-top: 1px solid #eee; flex-shrink: 0;
+    }
+    .chat-input textarea {
+      flex: 1; border: 1px solid #ddd; border-radius: 20px; padding: 10px 16px;
+      font-size: 0.9rem; resize: none; max-height: 100px; min-height: 42px;
+      outline: none; transition: border-color 0.2s;
+    }
+    .chat-input textarea:focus { border-color: #724ae8; }
+    .chat-input button {
+      width: 42px; height: 42px; border: none; border-radius: 50%;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; flex-shrink: 0;
+    }
+    .voice-btn { background: #f0f0f0; color: #724ae8; }
+    .voice-btn:hover { background: #e0e0e0; }
+    .voice-btn.recording { background: #e74c3c; color: #fff; animation: pulse-rec 1s infinite; }
+    @keyframes pulse-rec { 50% { transform: scale(1.1); } }
+    .send-btn { background: #724ae8; color: #fff; }
+    .send-btn:hover { background: #5f3dc4; }
+    .send-btn:disabled { background: #ccc; cursor: not-allowed; }
+    
+    /* Modal */
+    .modal-overlay {
+      position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100; backdrop-filter: blur(4px);
+    }
+    .modal-overlay.hidden { display: none; }
+    .modal {
+      background: #fff; padding: 24px; border-radius: 16px; width: 90%; max-width: 340px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .modal h3 { color: #724ae8; margin-bottom: 8px; font-size: 1.3rem; }
+    .modal p { color: #666; font-size: 0.9rem; margin-bottom: 16px; }
+    .modal input, .modal select {
+      width: 100%; padding: 12px; border: 2px solid #eee; border-radius: 10px;
+      font-size: 1rem; margin-bottom: 12px; outline: none; transition: border-color 0.2s;
+    }
+    .modal input:focus { border-color: #724ae8; }
+    .divider { text-align: center; color: #999; font-size: 0.8rem; margin: 12px 0; position: relative; }
+    .divider::before, .divider::after {
+      content: ''; position: absolute; top: 50%; width: 30%; height: 1px; background: #ddd;
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+    .patient-list { max-height: 120px; overflow-y: auto; margin-bottom: 16px; }
+    .patient-item {
+      padding: 10px 12px; border: 2px solid #eee; border-radius: 10px;
+      margin-bottom: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px;
+      transition: all 0.2s; font-size: 0.9rem;
+    }
+    .patient-item:hover { border-color: #724ae8; background: #faf8ff; }
+    .patient-item.selected { border-color: #724ae8; background: #f0ebff; }
+    .patient-item .history-badge { 
+      background: #4caf50; color: #fff; padding: 2px 8px; 
+      border-radius: 10px; font-size: 0.7rem; 
+    }
+    .modal-btns { display: flex; flex-direction: column; gap: 8px; }
+    .modal-btn {
+      padding: 12px; border: none; border-radius: 10px; font-size: 1rem;
+      font-weight: 500; cursor: pointer; transition: all 0.2s;
+    }
+    .modal-btn.primary { background: #724ae8; color: #fff; }
+    .modal-btn.primary:hover { background: #5f3dc4; }
+    .modal-btn.secondary { background: #f0f0f0; color: #333; }
+    .modal-btn.secondary:hover { background: #e0e0e0; }
+    .modal-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    
+    @media (max-width: 500px) {
+      .chatbot { right: 0; bottom: 0; width: 100%; height: 100%; border-radius: 0; }
+      .chatbot-toggler { bottom: 20px; right: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <button class="chatbot-toggler" id="toggler">
+    <span class="material-symbols-rounded">medical_services</span>
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  
+  <div class="chatbot" id="chatbot">
+    <header>
+      <h2>🩺 Dr. HealBot</h2>
+      <div class="header-btns">
+        <span class="material-symbols-outlined" id="new-session-btn" title="New Session">refresh</span>
+        <span class="material-symbols-outlined" id="close-btn" title="Close">close</span>
+      </div>
+    </header>
+    
+    <div class="patient-info-bar" id="patient-bar">
+      <span class="material-symbols-outlined" style="font-size:18px">person</span>
+      <span id="patient-name">Guest</span>
+    </div>
+    
+    <ul class="chatbox" id="chatbox"></ul>
+    
+    <div class="chat-input">
+      <button class="voice-btn" id="voice-btn" title="Voice input">
+        <span class="material-symbols-rounded">mic</span>
+      </button>
+      <textarea id="message-input" placeholder="Type your message..." rows="1"></textarea>
+      <button class="send-btn" id="send-btn" title="Send">
+        <span class="material-symbols-rounded">send</span>
+      </button>
+    </div>
+    
+    <div class="modal-overlay" id="modal">
+      <div class="modal">
+        <h3>Welcome!</h3>
+        <p>Enter your name or select an existing patient:</p>
+        <input type="text" id="name-input" placeholder="Your name..." />
+        <div class="divider">or select patient</div>
+        <div class="patient-list" id="patient-list">Loading...</div>
+        <div class="modal-btns">
+          <button class="modal-btn primary" id="start-btn">Start New Session</button>
+          <button class="modal-btn secondary" id="load-btn" disabled>Load Patient Data</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <audio id="audio" style="display:none"></audio>
+
+  <script>
+    const API = "";
+    
+    // Elements
+    const toggler = document.getElementById('toggler');
+    const chatbot = document.getElementById('chatbot');
+    const closeBtn = document.getElementById('close-btn');
+    const newSessionBtn = document.getElementById('new-session-btn');
+    const chatbox = document.getElementById('chatbox');
+    const input = document.getElementById('message-input');
+    const sendBtn = document.getElementById('send-btn');
+    const voiceBtn = document.getElementById('voice-btn');
+    const modal = document.getElementById('modal');
+    const nameInput = document.getElementById('name-input');
+    const patientList = document.getElementById('patient-list');
+    const startBtn = document.getElementById('start-btn');
+    const loadBtn = document.getElementById('load-btn');
+    const patientBar = document.getElementById('patient-bar');
+    const patientNameEl = document.getElementById('patient-name');
+    const audio = document.getElementById('audio');
+    
+    // State
+    let session = { name: null, patientData: null, history: [], biomarker: null };
+    let allSessions = {}; // Store all user sessions by name
+    let selectedPatient = null;
+    let patients = [];
+    let recording = false;
+    let mediaRecorder = null;
+    
+    // Toggle chatbot
+    toggler.onclick = () => {
+      document.body.classList.toggle('show-chatbot');
+      console.log('Toggled chatbot');
+    };
+    closeBtn.onclick = () => document.body.classList.remove('show-chatbot');
+    
+    // Session management - saves to backend
+    const saveSessionToBackend = async () => {
+      if (!session.name || session.history.length === 0) return;
+      
+      try {
+        await fetch(`${API}/chat-history`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            patient_name: session.name,
+            chat_history: session.history
+          })
+        });
+        console.log('✅ Chat history saved to backend');
+      } catch (e) {
+        console.error('Failed to save chat history:', e);
+      }
+    };
+    
+    const loadChatHistoryFromBackend = async (name) => {
+      try {
+        const res = await fetch(`${API}/chat-history/${encodeURIComponent(name)}`);
+        if (!res.ok) return null;
+        const data = await res.json();
+        return data.chat_history || [];
+      } catch (e) {
+        console.error('Failed to load chat history:', e);
+        return null;
+      }
+    };
+    
+    const deleteChatHistoryFromBackend = async (name) => {
+      try {
+        await fetch(`${API}/chat-history/${encodeURIComponent(name)}`, { method: 'DELETE' });
+        console.log('🗑️ Chat history deleted from backend');
+      } catch (e) {
+        console.error('Failed to delete chat history:', e);
+      }
+    };
+    
+    // Local session management (backup)
+    const saveSession = () => {
+      if (session.name) {
+        allSessions[session.name] = {
+          patientData: session.patientData,
+          history: session.history,
+          biomarker: session.biomarker,
+          lastUpdated: new Date().toISOString()
+        };
+        localStorage.setItem('healbot_sessions', JSON.stringify(allSessions));
+        localStorage.setItem('healbot_current', session.name);
+        
+        // Also save to backend
+        saveSessionToBackend();
+      }
+    };
+    
+    const loadAllSessions = () => {
+      const stored = localStorage.getItem('healbot_sessions');
+      if (stored) {
+        try { allSessions = JSON.parse(stored); } catch (e) { allSessions = {}; }
+      }
+    };
+    
+    const loadSession = () => {
+      loadAllSessions();
+      const currentName = localStorage.getItem('healbot_current');
+      if (currentName && allSessions[currentName]) {
+        session.name = currentName;
+        session.patientData = allSessions[currentName].patientData;
+        session.history = allSessions[currentName].history || [];
+        session.biomarker = allSessions[currentName].biomarker;
+        return true;
+      }
+      return false;
+    };
+    
+    const loadUserSession = (name) => {
+      loadAllSessions();
+      if (allSessions[name]) {
+        session.name = name;
+        session.patientData = allSessions[name].patientData;
+        session.history = allSessions[name].history || [];
+        session.biomarker = allSessions[name].biomarker;
+        return true;
+      }
+      return false;
+    };
+    
+    const clearSession = () => {
+      session = { name: null, patientData: null, history: [], biomarker: null };
+      localStorage.removeItem('healbot_current');
+    };
+    
+    const clearUserHistory = async (name) => {
+      if (allSessions[name]) {
+        delete allSessions[name];
+        localStorage.setItem('healbot_sessions', JSON.stringify(allSessions));
+      }
+      // Also delete from backend
+      await deleteChatHistoryFromBackend(name);
+    };
+    
+    // Fetch patients
+    const fetchPatients = async () => {
+      try {
+        const res = await fetch(`${API}/patients`);
+        const data = await res.json();
+        patients = data.patients || [];
+        await renderPatients();
+      } catch (e) {
+        patientList.innerHTML = '<p style="color:#999;font-size:0.85rem">Could not load patients</p>';
+      }
+    };
+    
+    const renderPatients = async () => {
+      if (!patients.length) {
+        patientList.innerHTML = '<p style="color:#999;font-size:0.85rem">No patients found</p>';
+        return;
+      }
+      
+      // Check chat history for each patient from backend
+      const patientItems = await Promise.all(patients.map(async (p) => {
+        let msgCount = 0;
+        try {
+          const history = await loadChatHistoryFromBackend(p);
+          msgCount = history?.length || 0;
+        } catch (e) {}
+        
+        const historyBadge = msgCount > 0 ? `<span class="history-badge">${msgCount} msgs</span>` : '';
+        return `<div class="patient-item" data-name="${p}">
+          <span class="material-symbols-outlined">folder_shared</span>
+          <span style="flex:1">${p}</span>
+          ${historyBadge}
+        </div>`;
+      }));
+      
+      patientList.innerHTML = patientItems.join('');
+      
+      patientList.querySelectorAll('.patient-item').forEach(el => {
+        el.onclick = () => {
+          patientList.querySelectorAll('.patient-item').forEach(e => e.classList.remove('selected'));
+          el.classList.add('selected');
+          selectedPatient = el.dataset.name;
+          loadBtn.disabled = false;
+        };
+      });
+    };
+    
+    const fetchPatientData = async (name) => {
+      try {
+        const res = await fetch(`${API}/patient/${encodeURIComponent(name)}`);
+        if (!res.ok) return null;
+        return await res.json();
+      } catch (e) { return null; }
+    };
+    
+    // Modal handlers
+    startBtn.onclick = async () => {
+      const name = nameInput.value.trim();
+      if (!name) { alert('Please enter your name'); return; }
+      
+      startBtn.textContent = 'Loading...';
+      startBtn.disabled = true;
+      
+      // Check for chat history on backend first
+      const backendHistory = await loadChatHistoryFromBackend(name);
+      
+      if (backendHistory && backendHistory.length > 0) {
+        const loadPrevious = confirm(`Welcome back ${name}! You have ${backendHistory.length} messages in your previous chat.\n\nClick OK to continue from where you left off, or Cancel to start fresh.`);
+        
+        if (loadPrevious) {
+          session.name = name;
+          session.history = backendHistory;
+          
+          // Load patient data
+          const data = await fetchPatientData(name);
+          if (data) session.patientData = data;
+          
+          updatePatientBar();
+          restoreChat();
+          modal.classList.add('hidden');
+          
+          startBtn.textContent = 'Start New Session';
+          startBtn.disabled = false;
+          return;
+        }
+      }
+      
+      // Start fresh session
+      session.name = name;
+      session.history = [];
+      session.biomarker = null;
+      
+      // Try to load patient data
+      const data = await fetchPatientData(name);
+      if (data) session.patientData = data;
+      
+      initChat();
+      modal.classList.add('hidden');
+      saveSession();
+      
+      startBtn.textContent = 'Start New Session';
+      startBtn.disabled = false;
+    };
+    
+    loadBtn.onclick = async () => {
+      if (!selectedPatient) return;
+      loadBtn.textContent = 'Loading...';
+      loadBtn.disabled = true;
+      
+      // Check for chat history on backend
+      const backendHistory = await loadChatHistoryFromBackend(selectedPatient);
+      
+      if (backendHistory && backendHistory.length > 0) {
+        const loadPrevious = confirm(`Patient "${selectedPatient}" has ${backendHistory.length} messages in previous chat.\n\nClick OK to continue from where you left off, or Cancel to start fresh.`);
+        
+        if (loadPrevious) {
+          session.name = selectedPatient;
+          session.history = backendHistory;
+          session.patientData = await fetchPatientData(selectedPatient);
+          
+          updatePatientBar();
+          restoreChat();
+          modal.classList.add('hidden');
+          
+          loadBtn.textContent = 'Load Patient Data';
+          loadBtn.disabled = false;
+          return;
+        }
+      }
+      
+      // Start fresh
+      session.name = selectedPatient;
+      session.history = [];
+      session.biomarker = null;
+      session.patientData = await fetchPatientData(selectedPatient);
+      
+      initChat();
+      modal.classList.add('hidden');
+      saveSession();
+      
+      loadBtn.textContent = 'Load Patient Data';
+      loadBtn.disabled = false;
+    };
+    
+    newSessionBtn.onclick = () => {
+      const options = session.name 
+        ? `What would you like to do?\n\n1. Continue current chat (Cancel)\n2. Start fresh for ${session.name} (clears chat)\n3. Switch to different user`
+        : 'Start a new session?';
+      
+      const choice = confirm(options + '\n\nClick OK to clear current chat and start fresh, or Cancel to continue.');
+      
+      if (choice) {
+        if (session.name) {
+          clearUserHistory(session.name);
+        }
+        clearSession();
+        selectedPatient = null;
+        nameInput.value = '';
+        loadBtn.disabled = true;
+        patientList.querySelectorAll('.patient-item').forEach(e => e.classList.remove('selected'));
+        modal.classList.remove('hidden');
+        chatbox.innerHTML = '';
+      }
+    };
+    
+    // Update patient display
+    const updatePatientBar = () => {
+      const msgCount = session.history?.length || 0;
+      let html = session.name || 'Guest';
+      
+      if (session.patientData) {
+        html += ' <span class="badge">📋 History</span>';
+      }
+      if (msgCount > 1) {
+        html += ` <span class="badge" style="background:#2196f3">${msgCount} msgs</span>`;
+      }
+      
+      patientNameEl.innerHTML = html;
+    };
+    
+    // Initialize chat
+    const initChat = () => {
+      updatePatientBar();
+      
+      let greeting = `👋 Hello ${session.name}! I'm Dr. HealBot.`;
+      if (session.patientData) {
+        greeting += ` I have your medical records on file.`;
+        if (session.patientData.allergies?.length) {
+          greeting += ` I've noted your allergies (${session.patientData.allergies.join(', ')}) and will keep them in mind.`;
+        }
+      }
+      greeting += ` How can I help you today?`;
+      
+      chatbox.innerHTML = '';
+      addMessage(greeting, 'incoming');
+      session.history = [{ role: 'model', text: greeting }];
+    };
+    
+    // Add message to chat
+    const addMessage = (text, type, isThinking = false) => {
+      const li = document.createElement('li');
+      li.className = `chat ${type}`;
+      
+      if (type === 'incoming') {
+        li.innerHTML = `<span class="bot-icon material-symbols-outlined">smart_toy</span><p>${isThinking ? 'Thinking...' : ''}</p>`;
+      } else {
+        li.innerHTML = `<p></p>`;
+      }
+      
+      const p = li.querySelector('p');
+      if (!isThinking) p.textContent = text;
+      if (isThinking) p.classList.add('thinking');
+      
+      chatbox.appendChild(li);
+      chatbox.scrollTop = chatbox.scrollHeight;
+      return p;
+    };
+    
+    // Send message
+    const sendMessage = async (msg) => {
+      const filtered = session.history.filter(m => m.text?.trim());
+      
+      const res = await fetch(`${API}/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: msg,
+          language: 'auto',
+          chat_history: filtered,
+          patient_data: session.patientData,
+          biomarker_analysis: session.biomarker
+        })
+      });
+      
+      if (!res.ok) throw new Error('Failed to send');
+      return (await res.json()).reply;
+    };
+    
+    // TTS
+    const speak = async (text) => {
+      try {
+        const res = await fetch(`${API}/tts`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, language_code: 'auto' })
+        });
+        if (res.ok) {
+          audio.src = URL.createObjectURL(await res.blob());
+          audio.play().catch(() => {});
+        }
+      } catch (e) {}
+    };
+    
+    // Handle send
+    const handleSend = async () => {
+      const msg = input.value.trim();
+      if (!msg) return;
+      
+      input.value = '';
+      addMessage(msg, 'outgoing');
+      session.history.push({ role: 'user', text: msg });
+      
+      const thinkingP = addMessage('', 'incoming', true);
+      
+      try {
+        const reply = await sendMessage(msg);
+        thinkingP.textContent = reply;
+        thinkingP.classList.remove('thinking');
+        session.history.push({ role: 'model', text: reply });
+        saveSession();
+        updatePatientBar();
+        speak(reply);
+      } catch (e) {
+        thinkingP.textContent = 'Error: ' + e.message;
+        thinkingP.classList.add('error');
+        thinkingP.classList.remove('thinking');
+      }
+    };
+    
+    sendBtn.onclick = handleSend;
+    input.onkeydown = (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); } };
+    
+    // Voice recording
+    voiceBtn.onclick = async () => {
+      if (recording) {
+        mediaRecorder?.stop();
+        return;
+      }
+      
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        const chunks = [];
+        
+        mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+        mediaRecorder.onstop = async () => {
+          recording = false;
+          voiceBtn.classList.remove('recording');
+          stream.getTracks().forEach(t => t.stop());
+          
+          const blob = new Blob(chunks, { type: 'audio/wav' });
+          const form = new FormData();
+          form.append('file', blob, 'audio.wav');
+          
+          try {
+            const res = await fetch(`${API}/stt`, { method: 'POST', body: form });
+            const data = await res.json();
+            if (data.transcript) {
+              input.value = data.transcript;
+              handleSend();
+            }
+          } catch (e) { console.error(e); }
+        };
+        
+        mediaRecorder.start();
+        recording = true;
+        voiceBtn.classList.add('recording');
+      } catch (e) {
+        alert('Microphone access denied');
+      }
+    };
+    
+    // Restore chat UI
+    const restoreChat = () => {
+      chatbox.innerHTML = '';
+      session.history.forEach(m => {
+        if (m.text?.trim()) {
+          addMessage(m.text, m.role === 'user' ? 'outgoing' : 'incoming');
+        }
+      });
+    };
+    
+    // Init
+    (async () => {
+      await fetchPatients();
+      
+      // Check for current session in localStorage first
+      const currentName = localStorage.getItem('healbot_current');
+      
+      if (currentName) {
+        // Try to load chat history from backend
+        const backendHistory = await loadChatHistoryFromBackend(currentName);
+        
+        if (backendHistory && backendHistory.length > 0) {
+          session.name = currentName;
+          session.history = backendHistory;
+          session.patientData = await fetchPatientData(currentName);
+          
+          updatePatientBar();
+          restoreChat();
+          modal.classList.add('hidden');
+          console.log('✅ Session restored from backend:', currentName, backendHistory.length, 'messages');
+          return;
+        }
+      }
+      
+      // No session found, show modal
+      modal.classList.remove('hidden');
+    })();
+  </script>
+</body>
+</html>
