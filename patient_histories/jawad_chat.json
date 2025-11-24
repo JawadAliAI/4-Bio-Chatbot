@@ -1,0 +1,11 @@
+{
+  "patient_name": "jawad",
+  "chat_history": [
+    {
+      "role": "model",
+      "text": "👋 Hello jawad! I'm Dr. HealBot. I have your medical records on file. How can I help you today?"
+    }
+  ],
+  "message_count": 1,
+  "last_updated": "2025-11-24T11:13:27.511336"
+}

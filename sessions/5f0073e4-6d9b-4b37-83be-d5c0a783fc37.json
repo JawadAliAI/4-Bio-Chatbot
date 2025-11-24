@@ -1,0 +1,53 @@
+{
+  "session_id": "5f0073e4-6d9b-4b37-83be-d5c0a783fc37",
+  "created_at": "2025-11-21T11:45:58.947114",
+  "patient_name": null,
+  "patient_age": null,
+  "patient_gender": null,
+  "biomarkers": null,
+  "biomarker_analysis": null,
+  "has_biomarkers": false,
+  "chat_history": [
+    {
+      "role": "user",
+      "text": "hey i am experiencing hyperinsomia these days",
+      "timestamp": "2025-11-21T11:46:01.230150"
+    },
+    {
+      "role": "assistant",
+      "text": "I understand you're experiencing hypersomnia. I'm sorry to hear that.\n\nCould you tell me how long you've been feeling this increased sleepiness, and how it's affecting your daily life?",
+      "timestamp": "2025-11-21T11:46:01.230150"
+    },
+    {
+      "role": "user",
+      "text": "its been 3 days i always feel sleepy i almost sleep for 9 10 hours still feels like i want to sleep again",
+      "timestamp": "2025-11-21T11:47:23.788906"
+    },
+    {
+      "role": "assistant",
+      "text": "Thank you for sharing that. Three days of excessive sleepiness, even after sleeping 9-10 hours, certainly sounds challenging.\n\nHave you noticed any other symptoms along with the sleepiness, such as a low mood, lack of energy, or changes in appetite?",
+      "timestamp": "2025-11-21T11:47:23.788906"
+    },
+    {
+      "role": "user",
+      "text": "yes lack of energy and increase in appetite",
+      "timestamp": "2025-11-21T11:48:38.530409"
+    },
+    {
+      "role": "assistant",
+      "text": "Thank you for providing that additional information. Feeling a lack of energy and an increase in appetite along with the excessive sleepiness is helpful to know.\n\nTo help me understand better, have you experienced any other symptoms, such as a fever, sore throat, body aches, or a runny nose?",
+      "timestamp": "2025-11-21T11:48:38.530409"
+    },
+    {
+      "role": "user",
+      "text": "no not any other symptoms",
+      "timestamp": "2025-11-21T11:49:31.207651"
+    },
+    {
+      "role": "assistant",
+      "text": "Based on what you've told me, you've been experiencing excessive sleepiness for the past three days, even after sleeping 9-10 hours, along with a lack of energy and an increased appetite. You haven't had any other symptoms like fever, sore throat, or body aches.\n\nPossible Causes (Preliminary):\n*   **Temporary disruption to your sleep-wake cycle or daily routine:** Sometimes, changes in our schedule, even minor ones, can make us feel more tired than usual.\n*   **Mild fatigue or stress:** Your body might be signaling a need for more rest due to general fatigue or minor stress.\n*   **Early stage of a mild viral illness:** While you don't have typical cold or flu symptoms, some people experience fatigue and appetite changes as very early signs of a mild infection.\n\nRecommended Medications (Over-the-Counter):\nGiven your symptoms, there isn't a specific over-the-counter medication recommended for hypersomnia or lack of energy. The focus should be on supportive care and lifestyle adjustments.\n\nLifestyle and Home Care Tips:\n1.  **Maintain a consistent sleep schedule:** Try to go to bed and wake up at roughly the same time each day, even on weekends, to help regulate your body's natural sleep rhythm.\n2.  **Focus on hydration and balanced nutrition:** Ensure you're drinking enough water throughout the day and eating regular, nutritious meals to support your energy levels.\n3.  **Incorporate gentle activity:** Even a short, brisk walk outdoors can sometimes help to boost energy and improve alertness.\n\nWhen to See a Real Doctor:\n1.  If your symptoms worsen or persist for more than a week without improvement.\n2.  If you develop new or concerning symptoms, such as a fever, severe headache, unexplained weight changes, or significant mood changes.\n3.  If the excessive sleepiness begins to significantly impact your daily functioning, work, or safety (e.g., if you feel drowsy while driving).\n\nFollow Up Advice:\nPlease monitor your symptoms closely over the next few days. If your sleepiness, lack of energy, and increased appetite don't improve with home care, or if you notice any new symptoms, it would be best to consult a doctor for a more comprehensive evaluation.",
+      "timestamp": "2025-11-21T11:49:31.207651"
+    }
+  ],
+  "last_updated": "2025-11-21T11:49:31.207651"
+}

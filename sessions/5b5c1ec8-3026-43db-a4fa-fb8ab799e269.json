@@ -1,0 +1,33 @@
+{
+  "session_id": "5b5c1ec8-3026-43db-a4fa-fb8ab799e269",
+  "created_at": "2025-11-21T11:38:55.447802",
+  "patient_name": "Jawad",
+  "patient_age": 24,
+  "patient_gender": "male",
+  "biomarkers": null,
+  "biomarker_analysis": null,
+  "has_biomarkers": false,
+  "chat_history": [
+    {
+      "role": "user",
+      "text": "Hey i have a Fever",
+      "timestamp": "2025-11-21T11:39:37.991391"
+    },
+    {
+      "role": "assistant",
+      "text": "Hello! I'm sorry to hear you're feeling unwell. To help me understand better, could you please tell me what your temperature is and how long you've had the fever?",
+      "timestamp": "2025-11-21T11:39:37.991391"
+    },
+    {
+      "role": "user",
+      "text": "عندي حُمّى منذ خمسة أيام",
+      "timestamp": "2025-11-21T11:40:01.340609"
+    },
+    {
+      "role": "assistant",
+      "text": "خمسة أيام مدة لا بأس بها. هل قمت بقياس درجة حرارتك؟ وما هي الأعراض الأخرى التي تشعر بها إلى جانب الحمى؟ مثل آلام الجسم، قشعريرة، صداع، سعال، أو التهاب الحلق؟",
+      "timestamp": "2025-11-21T11:40:01.340609"
+    }
+  ],
+  "last_updated": "2025-11-21T11:40:01.340609"
+}

@@ -1,0 +1,419 @@
+{
+  "executive_summary": {
+    "top_priorities": [
+      "Investigate Hormonal Imbalances (Elevated Testosterone and Estrogen):The significantly elevated levels of Total Testosterone (450.0 ng/dL) and Free Testosterone (15.0 pg/mL) are critically high for a 52yearold female (normal ranges: 15–70 ng/dL and 0.5–4.2 pg/mL, respectively). Additionally, Estrogen (60.0 pg/mL) is elevated for a likely postmenopausal female (normal postmenopause: <20–30 pg/mL). These pronounced hormonal deviations warrant immediate and thorough medical evaluation by an endocrinologist or gynecologist to identify the underlying cause, which could include ovarian or adrenal gland issues, exogenous hormone intake, or other endocrine disorders. Such imbalances can significantly impact cardiovascular health, metabolic function, bone density, and overall wellbeing.",
+      "Address Overweight Status and Optimize Metabolic Health:With a BMI of 25.7 kg/m², the patient is categorized as overweight. While current glycemic markers (Fasting Blood Sugar, HbA1c, Insulin) are within healthy ranges, the HOMAIR of 1.2, although normal, is trending towards the higher end of optimal, suggesting a subtle need for continued vigilance against insulin resistance. Proactive weight management through tailored dietary changes and increased physical activity is crucial. Reducing weight can help mitigate future risks of metabolic syndrome, cardiovascular disease, and may positively influence the observed hormonal imbalances, as adipose tissue plays a role in hormone metabolism.",
+      "Maintain and Enhance Cardiovascular and Bone Health:Although the current lipid profile (Total Cholesterol, LDL, Triglycerides, ApoB, Cholesterol/HDL Ratio) and inflammatory markers (hsCRP, Homocysteine) are favorable, the HDL level (50.0 mg/dL) is at the lower boundary of the healthy range for women. Additionally, the longterm implications of the elevated sex hormones on cardiovascular health, especially in a likely postmenopausal context, require careful monitoring. Prioritizing strategies to potentially raise HDL and ensuring optimal Vitamin D levels (currently 35.0 ng/mL, good but could be further optimized for robust bone health) will contribute to sustained cardiovascular and skeletal wellbeing.",
+      "0 mg/dL) and HbA1c (5.4%). Insulin (10.0 µIU/mL) and CPeptide (1.2 ng/mL) levels are well within the healthy midrange, signifying efficient endogenous insulin production and utilization. A HOMAIR of 1.2 indicates good, albeit improvable, insulin sensitivity, establishing a strong foundation against the immediate risk of prediabetes or Type 2 Diabetes. This provides a significant advantage for overall metabolic resilience.",
+      "0 mg/dL), LDL (90.0 mg/dL), and Triglycerides (120.0 mg/dL). Crucially, the Cholesterol/HDL Ratio (3.0) is optimal, and ApoB (70.0 mg/dL) is well controlled, indicating a low burden of atherogenic particles. Furthermore, inflammatory markers such as hsCRP (1.0 mg/L) and Homocysteine (10.0 µmol/L) are low, reflecting minimal systemic inflammation and a reduced immediate risk of atherosclerosis and cardiovascular disease.",
+      "0 ng/mL), Vitamin B12 (500.0 pg/mL), Iron (100.0 µg/dL), and Zinc (90.0 µg/dL), are all sufficient. These levels collectively support optimal hematologic function, enzymatic reactions, strong immune defense, and sound bone health."
+    ],
+    "key_strengths": [
+      "Excellent Glycemic Control and Insulin Sensitivity:The patient demonstrates robust metabolic health, characterized by optimal Fasting Blood Sugar (85.0 mg/dL) and HbA1c (5.4%). Insulin (10.0 µIU/mL) and CPeptide (1.2 ng/mL) levels are well within the healthy midrange, signifying efficient endogenous insulin production and utilization. A HOMAIR of 1.2 indicates good, albeit improvable, insulin sensitivity, establishing a strong foundation against the immediate risk of prediabetes or Type 2 Diabetes. This provides a significant advantage for overall metabolic resilience.",
+      "Favorable Cardiovascular Risk Profile (Aside from Hormonal Imbalance):The lipid panel shows healthy Total Cholesterol (180.0 mg/dL), LDL (90.0 mg/dL), and Triglycerides (120.0 mg/dL). Crucially, the Cholesterol/HDL Ratio (3.0) is optimal, and ApoB (70.0 mg/dL) is well controlled, indicating a low burden of atherogenic particles. Furthermore, inflammatory markers such as hsCRP (1.0 mg/L) and Homocysteine (10.0 µmol/L) are low, reflecting minimal systemic inflammation and a reduced immediate risk of atherosclerosis and cardiovascular disease.",
+      "Robust Organ Function and Sufficient Nutrient Status:The patient exhibits healthy function across vital organ systems, with liver, renal, and thyroid functions all operating within normal parameters. This indicates wellmaintained hepatocellular integrity, efficient kidney filtration, and balanced thyroid hormone production. Moreover, key vitamin and mineral levels, including Vitamin D (35.0 ng/mL), Vitamin B12 (500.0 pg/mL), Iron (100.0 µg/dL), and Zinc (90.0 µg/dL), are all sufficient. These levels collectively support optimal hematologic function, enzymatic reactions, strong immune defense, and sound bone health."
+    ]
+  },
+  "system_analysis": {
+    "Cardiovascular System": "Status: Normal, with areas for optimization. Explanation: Lipid profile including Total Cholesterol (180.0 mg/dL), LDL (90.0 mg/dL), Triglycerides (120.0 mg/dL), ApoB (70.0 mg/dL), and Cholesterol/HDL Ratio (3.0) are within reference ranges or optimal, indicating low immediate risk of atherosclerosis. HDL (50.0 mg/dL) is at the lower end of the healthy range for women, suggesting potential for improvement. hs-CRP (1.0 mg/L) and Homocysteine (10.0 µmol/L) levels are normal, reflecting minimal systemic inflammation and proper myocardial health. However, the detected hormonal imbalances need to be considered for their long-term cardiovascular implications.",
+    "Metabolic & Glycemic Control": "Status: Good, with a need for vigilance. Explanation: Fasting Blood Sugar (85.0 mg/dL), HbA1c (5.4%), Insulin (10.0 µIU/mL), C-Peptide (1.2 ng/mL) are within healthy ranges, suggesting effective glucose metabolism and good insulin sensitivity. HOMA-IR (1.2), while normal, indicates that maintaining an active lifestyle and healthy weight is important to prevent progression towards insulin resistance. Leptin levels (10.0 ng/mL) are also normal.",
+    "Liver Function": "Status: Normal. Explanation: ALT (25.0 U/L), AST (24.0 U/L), GGT (20.0 U/L), Total Bilirubin (0.7 mg/dL), and Total Protein (7.0 g/dL) are within reference ranges, reflecting normal hepatocellular integrity, protein synthesis, and biliary excretion. Abnormalities could indicate hepatic injury, cholestasis, or metabolic liver disorders, none of which are present here.",
+    "Renal Function": "Status: Normal. Explanation: Creatinine (1.0 mg/dL), eGFR (100.0 mL/min/1.73m²), and Uric Acid (5.0 mg/dL) are within expected ranges, suggesting proper kidney filtration and waste excretion. Creatinine is at the higher end of the normal range for women but remains within healthy limits, and eGFR is excellent. Deviations may indicate renal impairment, none of which are observed here.",
+    "Thyroid Function": "Status: Normal. Explanation: TSH (2.0 µIU/mL), Free T3 (3.2 pg/mL), and Free T4 (1.2 ng/dL) are within reference limits, showing normal thyroid hormone production and peripheral conversion. This indicates healthy thyroid gland function.",
+    "Adrenal & Stress Hormones": "Status: Normal. Explanation: Cortisol (12.0 µg/dL, assuming AM sample) and DHEA-S (250.0 µg/dL) are within normal ranges, reflecting healthy adrenal function and stress response.",
+    "Sex Hormones & Reproductive Health": "Status: Significantly Elevated. Explanation: Total Testosterone (450.0 ng/dL) and Free Testosterone (15.0 pg/mL) are substantially elevated for a 52-year-old female (Normal Total: 15–70 ng/dL; Normal Free: 0.5–4.2 pg/mL). Estrogen (60.0 pg/mL) is also elevated for a likely post-menopausal female (Normal Postmenopause: <20–30 pg/mL). SHBG (40.0 nmol/L) is normal, meaning the high testosterone is readily bioavailable. These pronounced elevations require urgent medical investigation to determine the underlying cause and potential health implications.",
+    "Vitamins & Minerals": "Status: Normal. Explanation: Vitamin D (35.0 ng/mL), Vitamin B12 (500.0 pg/mL), Iron (100.0 µg/dL), and Zinc (90.0 µg/dL) are within reference ranges, supporting optimal hematologic function, enzymatic reactions, immune defense, and bone health. Vitamin D is good but could be optimized to the higher end of the range.",
+    "Hematology & Immune Function": "Status: Normal. Explanation: While specific CBC parameters are not provided, Anti-CCP (10.0 U/mL) is within normal limits, suggesting no current signs of rheumatoid arthritis. The overall template description indicates proper oxygen transport, red blood cell morphology, and immune competence based on an assumed complete panel.",
+    "Cancer Markers": "Status: Not Assessed Directly. Explanation: No specific cancer markers were provided in this panel, so a direct assessment of cancer risk based on these markers cannot be made.",
+    "Inflammatory Markers": "Status: Normal. Explanation: hs-CRP (1.0 mg/L) and Homocysteine (10.0 µmol/L) are within recommended ranges, reflecting low systemic inflammation and minimal cardiovascular or metabolic risk."
+  },
+  "personalized_action_plan": {
+    "Nutrition": "1.",
+    "Prioritize a Balanced, Whole-Food Diet": "Emphasize a diet rich in fruits, vegetables, lean proteins, and healthy fats. Focus on whole grains over refined carbohydrates to support stable blood sugar and continued insulin sensitivity. Limit processed foods, sugary drinks, and excessive amounts of saturated and trans fats. 2.",
+    "Optimize Healthy Fats": "Increase intake of omega-3 fatty acids from sources like fatty fish (salmon, mackerel, sardines), flaxseeds, chia seeds, and walnuts. These fats are crucial for cardiovascular health, reducing inflammation, and may play a role in hormone regulation. 3.",
+    "Support Hormonal Balance with Fiber and Cruciferous Vegetables": "Incorporate high-fiber foods (legumes, whole grains, vegetables, fruits) to aid in estrogen metabolism and elimination. Cruciferous vegetables (broccoli, cauliflower, Brussels sprouts) contain compounds that support liver detoxification pathways involved in hormone balance. 4.",
+    "Hydration and Micronutrient Maintenance": "Ensure consistent and adequate water intake throughout the day. Continue to include foods rich in Vitamin D (fortified dairy, fatty fish, mushrooms), Vitamin B12 (lean meats, fish, dairy, fortified cereals), Iron (lean red meat, lentils, spinach), and Zinc (nuts, seeds, legumes) to maintain excellent nutrient status.",
+    "Lifestyle": "1.",
+    "Regular Physical Activity for Weight and Hormonal Management": "Aim for at least 150 minutes of moderate-intensity aerobic exercise (e.g., brisk walking, swimming, cycling) or 75 minutes of vigorous-intensity exercise per week, combined with strength training 2-3 times per week. This is critical for achieving a healthy weight (current BMI 25.7 kg/m²), improving HDL levels, enhancing insulin sensitivity, and positively influencing overall hormonal regulation. 2.",
+    "Effective Stress Management": "Implement daily stress-reducing practices such as mindfulness meditation, yoga, deep breathing exercises, spending time in nature, or engaging in hobbies. Chronic stress can negatively impact adrenal function and sex hormone balance, which is particularly relevant given the current hormonal findings. 3.",
+    "Prioritize Quality Sleep": "Aim for 7-9 hours of consistent, high-quality sleep per night. Adequate sleep is fundamental for metabolic health, endocrine function, mood regulation, and overall physical and mental well-being. 4.",
+    "Achieve and Maintain Healthy Weight": "Actively work towards reducing weight to a healthy range (BMI 18.5-24.9 kg/m²). Even a modest weight loss of 5-10% can significantly improve insulin sensitivity, lipid profile, and may help normalize hormonal imbalances.",
+    "Testing": "1.",
+    "Comprehensive Hormonal Workup": "A crucial next step is a detailed hormonal investigation, including repeat Total and Free Testosterone, a full Estrogen panel (Estradiol, Estrone), LH, FSH, DHEA-S, and potentially adrenal hormone precursors. This will help confirm the elevated levels and pinpoint the source. 2.",
+    "Imaging Studies": "Depending on the clinical picture and repeat hormone results, imaging of the ovaries (e.g., transvaginal ultrasound) and adrenal glands (e.g., CT or MRI) may be necessary to rule out tumors or other structural abnormalities causing hormone overproduction. 3.",
+    "Annual Metabolic and Cardiovascular Screening": "Continue regular monitoring of Fasting Blood Sugar, HbA1c, Lipid Profile, and hs-CRP to track and maintain current excellent metabolic and cardiovascular health. 4.",
+    "Bone Density Scan (DEXA)": "Given the patient's age (52) and the potential long-term effects of hormonal imbalances (both high estrogen and high androgens can affect bone health differently depending on context) on bone density, a baseline bone density scan is recommended.",
+    "Medical Consultation": "1.",
+    "Immediate Consultation with an Endocrinologist/Gynecologist": "It is imperative to schedule an immediate consultation with an endocrinologist or gynecologist to thoroughly investigate the significantly elevated Total Testosterone, Free Testosterone, and Estrogen levels. These findings are clinically significant and require urgent diagnostic evaluation to identify the underlying cause and determine appropriate management strategies. 2.",
+    "Discuss Weight Management with Healthcare Provider": "Consult with your primary care physician or a registered dietitian to develop a personalized and sustainable plan for healthy weight management, addressing the current overweight status. 3.",
+    "Review All Results with Primary Care Physician": "Have a comprehensive discussion with your primary care physician to review all lab results, understand their implications in the context of your overall health, and coordinate any necessary referrals to specialists."
+  },
+  "interaction_alerts": [
+    "Elevated Testosterone & Estrogen with Overweight Status:The combination of significantly high testosterone and estrogen levels, alongside being overweight (BMI 25.7 kg/m²), presents a complex interplay. Adipose tissue can act as an endocrine organ, contributing to the synthesis of estrogen (via aromatization of androgens) and potentially influencing testosterone metabolism. This interaction can exacerbate the existing hormonal imbalances, potentially increasing the risk for conditions such as endometrial hyperplasia, breast health concerns, and cardiovascular complications in the long term. Weight reduction may help ameliorate some aspects of this hormonal dysregulation.",
+    "Hormonal Imbalance & Cardiovascular Risk:While the current cardiovascular risk profile (lipid panel, hsCRP, homocysteine) is generally favorable, chronically elevated sex hormones, particularly testosterone and estrogen in a likely postmenopausal female, can have complex and potentially adverse longterm implications for cardiovascular health. This necessitates careful and ongoing monitoring of cardiovascular markers and proactive management of all modifiable risk factors to mitigate future risks.",
+    "HOMAIR and Lifestyle Factors:Although the HOMAIR is currently within the normal range (1.2), its proximity to the threshold for insulin resistance, coupled with an overweight BMI, suggests a critical interaction. Without sustained healthy lifestyle interventions, the overweight status could predispose the individual to developing insulin resistance in the future, which would further complicate metabolic and potentially exacerbate hormonal health challenges."
+  ],
+  "normal_ranges": {
+    "Urea (S)": "17–43 mg/dL",
+    "Creatinine (Men)": "0.74–1.35 mg/dL",
+    "Creatinine (Women)": "0.59–1.04 mg/dL",
+    "Uric Acid (Men)": "3.4–7.0 mg/dL",
+    "Uric Acid (Women)": "2.4–6.0 mg/dL",
+    "Calcium (S)": "8.5–10.5 mg/dL",
+    "Phosphorus (S)": "2.5–4.5 mg/dL",
+    "Sodium (S)": "135–145 mEq/L",
+    "Potassium (S)": "3.5–5.1 mEq/L",
+    "Chloride (S)": "98–107 mEq/L",
+    "Bicarbonate (S)": "22–28 mEq/L",
+    "eGFR": "≥90 mL/min/1.73m²",
+    "Serum Osmolality": "275–295 mOsm/kg",
+    "Ionized Calcium": "1.12–1.32 mmol/L",
+    "Amylase (S)": "23–85 U/L",
+    "Lipase (S)": "0–160 U/L",
+    "up\n- WBC": "4–10 ×10^3/μL",
+    "Hemoglobin": "13–17 g/dL",
+    "MCV": "80–100 fL",
+    "RDW": "11.5–14.5 %",
+    "Lymphocytes": "20–40 %",
+    "Fasting Blood Sugar": "70–99 mg/dL",
+    "HbA1c": "<5.7 %",
+    "Insulin": "2–20 µIU/mL",
+    "C-Peptide": "0.5–2.0 ng/mL",
+    "HOMA-IR": "<1 Optimal, 1–2 Normal, >2 Insulin Resistance",
+    "Total Cholesterol": "<200 mg/dL",
+    "LDL": "<100 mg/dL",
+    "HDL (Men)": "≥40 mg/dL",
+    "HDL (Women)": "≥50 mg/dL",
+    "Triglycerides": "<150 mg/dL",
+    "Apo A-1": "120–160 mg/dL",
+    "Apo B": "<90 mg/dL",
+    "Apo B/A1 ratio": "0.3–0.7",
+    "Cholesterol/HDL Ratio": "<3.5 Optimal",
+    "Albumin": "3.5–5.0 g/dL",
+    "Total Protein": "6.0–8.3 g/dL",
+    "ALT": "10–40 U/L",
+    "AST": "10–40 U/L",
+    "ALP": "44–147 U/L",
+    "GGT": "8–61 U/L",
+    "LDH": "140–280 U/L",
+    "Globulin": "2.0–3.5 g/dL",
+    "Albumin/Globulin Ratio": "1.1–2.5",
+    "Magnesium": "1.7–2.2 mg/dL",
+    "Total Bilirubin": "0.1–1.2 mg/dL",
+    "Direct Bilirubin": "0.0–0.3 mg/dL",
+    "Indirect Bilirubin": "0.2–0.9 mg/dL",
+    "Ammonia": "15–45 µmol/L",
+    "hs-CRP": "1–3 mg/L",
+    "CK": "40–200 U/L",
+    "CK-MB": "0–25 U/L",
+    "Homocysteine": "5–15 µmol/L",
+    "Zinc": "70–120 µg/dL",
+    "Copper": "70–140 µg/dL",
+    "Selenium": "70–150 µg/L",
+    "Iron (Men)": "60–170 µg/dL",
+    "Iron (Women)": "50–170 µg/dL",
+    "TIBC": "250–450 µg/dL",
+    "Transferrin": "200–360 mg/dL",
+    "Vitamin D": "30–60 ng/mL",
+    "Vitamin B12": "200–900 pg/mL",
+    "Total Testosterone (Men)": "300–1000 ng/dL",
+    "Total Testosterone (Women)": "15–70 ng/dL",
+    "Free Testosterone (Men)": "5–21 pg/mL",
+    "Free Testosterone (Women)": "0.5–4.2 pg/mL",
+    "Estrogen (Men)": "10–40 pg/mL",
+    "Estrogen (Women Follicular)": "30–120 pg/mL",
+    "Estrogen (Women Ovulation)": "130–370 pg/mL",
+    "Estrogen (Women Luteal)": "70–250 pg/mL",
+    "Estrogen (Women Postmenopause)": "<20–30 pg/mL",
+    "Progesterone": "0.2–1.4 ng/mL",
+    "SHBG (Men)": "10–57 nmol/L",
+    "SHBG (Women)": "18–144 nmol/L",
+    "LH": "1.7–8.6 IU/L",
+    "FSH": "1.5–12.4 IU/L",
+    "DHEA-S (Men)": "280–640 µg/dL",
+    "DHEA-S (Women)": "65–380 µg/dL",
+    "Cortisol (AM)": "6–23 µg/dL",
+    "Cortisol (PM)": "2–14 µg/dL",
+    "IGF-1": "100–300 ng/mL",
+    "Leptin (Men)": "0.5–8 ng/mL",
+    "Leptin (Women)": "5–25 ng/mL",
+    "Adiponectin": "5–30 µg/mL",
+    "TSH": "0.4–4.0 µIU/mL",
+    "Free T3": "2.0–4.4 pg/mL",
+    "Free T4": "0.8–1.8 ng/dL",
+    "Total T3": "80–180 ng/dL",
+    "Total T4": "4.5–12 µg/dL",
+    "Reverse T3": "9–24 ng/dL",
+    "TPO Ab": "<35 IU/mL",
+    "TG Ab": "<40 IU/mL",
+    "CA125": "<35 U/mL",
+    "CA15-3": "<30 U/mL",
+    "CA19-9": "<37 U/mL",
+    "PSA": "<4 ng/mL",
+    "CEA": "<5 ng/mL",
+    "Calcitonin": "<10 pg/mL",
+    "AFP": "<10 ng/mL",
+    "TNF": "<8 pg/m"
+  },
+  "biomarker_table": [
+    {
+      "biomarker": "Biomarker",
+      "value": "Value",
+      "status": "Status",
+      "insight": "Insight",
+      "reference_range": "Reference Range"
+    },
+    {
+      "biomarker": "Fasting Blood Sugar",
+      "value": "85.0 mg/dL",
+      "status": "Normal",
+      "insight": "Indicates healthy glucose levels.",
+      "reference_range": "70–99 mg/dL"
+    },
+    {
+      "biomarker": "HbA1c",
+      "value": "5.4 %",
+      "status": "Normal",
+      "insight": "Reflects good average blood sugar control over 2-3 months.",
+      "reference_range": "<5.7 %"
+    },
+    {
+      "biomarker": "Insulin",
+      "value": "10.0 µIU/mL",
+      "status": "Normal",
+      "insight": "Healthy insulin secretion.",
+      "reference_range": "2–20 µIU/mL"
+    },
+    {
+      "biomarker": "C-Peptide",
+      "value": "1.2 ng/mL",
+      "status": "Normal",
+      "insight": "Adequate endogenous insulin production.",
+      "reference_range": "0.5–2.0 ng/mL"
+    },
+    {
+      "biomarker": "HOMA-IR",
+      "value": "1.2",
+      "status": "Normal",
+      "insight": "Good insulin sensitivity, but close to the higher end of optimal, suggesting vigilance.",
+      "reference_range": "<1 Optimal, 1–2 Normal, >2 Insulin Resistance"
+    },
+    {
+      "biomarker": "Leptin",
+      "value": "10.0 ng/mL",
+      "status": "Normal",
+      "insight": "Healthy regulation of appetite and energy balance for a female.",
+      "reference_range": "5–25 ng/mL (Women)"
+    },
+    {
+      "biomarker": "Total Cholesterol",
+      "value": "180.0 mg/dL",
+      "status": "Normal",
+      "insight": "Desirable level for cardiovascular health.",
+      "reference_range": "<200 mg/dL"
+    },
+    {
+      "biomarker": "LDL",
+      "value": "90.0 mg/dL",
+      "status": "Normal",
+      "insight": "Optimal level, indicating low risk for atherosclerosis.",
+      "reference_range": "<100 mg/dL"
+    },
+    {
+      "biomarker": "HDL",
+      "value": "50.0 mg/dL",
+      "status": "Normal",
+      "insight": "At the lower end of the healthy range for women, suggests opportunity for optimization.",
+      "reference_range": "≥50 mg/dL (Women)"
+    },
+    {
+      "biomarker": "Triglycerides",
+      "value": "120.0 mg/dL",
+      "status": "Normal",
+      "insight": "Healthy level, indicating low cardiovascular risk.",
+      "reference_range": "<150 mg/dL"
+    },
+    {
+      "biomarker": "ApoB",
+      "value": "70.0 mg/dL",
+      "status": "Normal",
+      "insight": "Optimal level, indicating low burden of atherogenic particles.",
+      "reference_range": "<90 mg/dL"
+    },
+    {
+      "biomarker": "Cholesterol/HDL Ratio",
+      "value": "3.0",
+      "status": "Optimal",
+      "insight": "Excellent ratio, indicating very low cardiovascular risk.",
+      "reference_range": "<3.5 Optimal"
+    },
+    {
+      "biomarker": "hs-CRP",
+      "value": "1.0 mg/L",
+      "status": "Normal",
+      "insight": "Low level of systemic inflammation.",
+      "reference_range": "1–3 mg/L"
+    },
+    {
+      "biomarker": "Homocysteine",
+      "value": "10.0 µmol/L",
+      "status": "Normal",
+      "insight": "Healthy level, indicating low thrombotic risk.",
+      "reference_range": "5–15 µmol/L"
+    },
+    {
+      "biomarker": "ALT",
+      "value": "25.0 U/L",
+      "status": "Normal",
+      "insight": "Healthy liver enzyme levels, indicating no hepatocellular injury.",
+      "reference_range": "10–40 U/L"
+    },
+    {
+      "biomarker": "AST",
+      "value": "24.0 U/L",
+      "status": "Normal",
+      "insight": "Healthy liver enzyme levels.",
+      "reference_range": "10–40 U/L"
+    },
+    {
+      "biomarker": "GGT",
+      "value": "20.0 U/L",
+      "status": "Normal",
+      "insight": "Healthy liver enzyme levels, reflecting normal bile duct function.",
+      "reference_range": "8–61 U/L"
+    },
+    {
+      "biomarker": "Total Bilirubin",
+      "value": "0.7 mg/dL",
+      "status": "Normal",
+      "insight": "Healthy breakdown and excretion of red blood cells.",
+      "reference_range": "0.1–1.2 mg/dL"
+    },
+    {
+      "biomarker": "Total Protein",
+      "value": "7.0 g/dL",
+      "status": "Normal",
+      "insight": "Adequate protein synthesis and nutritional status.",
+      "reference_range": "6.0–8.3 g/dL"
+    },
+    {
+      "biomarker": "Creatinine",
+      "value": "1.0 mg/dL",
+      "status": "Normal",
+      "insight": "Healthy kidney function, though at the higher end of normal for women.",
+      "reference_range": "0.59–1.04 mg/dL (Women)"
+    },
+    {
+      "biomarker": "eGFR",
+      "value": "100.0 mL/min/1.73m²",
+      "status": "Normal",
+      "insight": "Excellent kidney filtration rate.",
+      "reference_range": "≥90 mL/min/1.73m²"
+    },
+    {
+      "biomarker": "Uric Acid",
+      "value": "5.0 mg/dL",
+      "status": "Normal",
+      "insight": "Healthy levels, indicating low risk for gout or kidney stones.",
+      "reference_range": "2.4–6.0 mg/dL (Women)"
+    },
+    {
+      "biomarker": "Vitamin D",
+      "value": "35.0 ng/mL",
+      "status": "Normal",
+      "insight": "Sufficient for bone health, but could be optimized to the higher end of the range.",
+      "reference_range": "30–60 ng/mL"
+    },
+    {
+      "biomarker": "Vitamin B12",
+      "value": "500.0 pg/mL",
+      "status": "Normal",
+      "insight": "Ample levels for neurological function and red blood cell production.",
+      "reference_range": "200–900 pg/mL"
+    },
+    {
+      "biomarker": "Iron",
+      "value": "100.0 µg/dL",
+      "status": "Normal",
+      "insight": "Healthy iron stores and transport.",
+      "reference_range": "50–170 µg/dL (Women)"
+    },
+    {
+      "biomarker": "Zinc",
+      "value": "90.0 µg/dL",
+      "status": "Normal",
+      "insight": "Adequate for immune function, wound healing, and enzymatic processes.",
+      "reference_range": "70–120 µg/dL"
+    },
+    {
+      "biomarker": "TSH",
+      "value": "2.0 µIU/mL",
+      "status": "Normal",
+      "insight": "Optimal thyroid stimulating hormone level, indicating balanced thyroid function.",
+      "reference_range": "0.4–4.0 µIU/mL"
+    },
+    {
+      "biomarker": "Free T3",
+      "value": "3.2 pg/mL",
+      "status": "Normal",
+      "insight": "Healthy level of active thyroid hormone.",
+      "reference_range": "2.0–4.4 pg/mL"
+    },
+    {
+      "biomarker": "Free T4",
+      "value": "1.2 ng/dL",
+      "status": "Normal",
+      "insight": "Healthy level of thyroid hormone.",
+      "reference_range": "0.8–1.8 ng/dL"
+    },
+    {
+      "biomarker": "Total Testosterone",
+      "value": "450.0 ng/dL",
+      "status": "High",
+      "insight": "Significantly elevated for a female; requires urgent medical investigation.",
+      "reference_range": "15–70 ng/dL (Women)"
+    },
+    {
+      "biomarker": "Free Testosterone",
+      "value": "15.0 pg/mL",
+      "status": "High",
+      "insight": "Significantly elevated for a female; indicative of hyperandrogenism and requires urgent investigation.",
+      "reference_range": "0.5–4.2 pg/mL (Women)"
+    },
+    {
+      "biomarker": "Estrogen (Estradiol)",
+      "value": "60.0 pg/mL",
+      "status": "High",
+      "insight": "Elevated for a likely post-menopausal female; requires investigation.",
+      "reference_range": "<20–30 pg/mL (Women Postmenopause)"
+    },
+    {
+      "biomarker": "SHBG",
+      "value": "40.0 nmol/L",
+      "status": "Normal",
+      "insight": "Healthy SHBG levels, indicating good bioavailability of hormones, but not buffering the high testosterone.",
+      "reference_range": "18–144 nmol/L (Women)"
+    },
+    {
+      "biomarker": "Cortisol",
+      "value": "12.0 µg/dL",
+      "status": "Normal",
+      "insight": "Healthy adrenal response and stress hormone balance (assuming AM sample).",
+      "reference_range": "6–23 µg/dL (AM)"
+    },
+    {
+      "biomarker": "DHEA-S",
+      "value": "250.0 µg/dL",
+      "status": "Normal",
+      "insight": "Healthy adrenal androgen production for a female.",
+      "reference_range": "65–380 µg/dL (Women)"
+    },
+    {
+      "biomarker": "Anti-CCP",
+      "value": "10.0 U/mL",
+      "status": "Normal",
+      "insight": "Indicates low likelihood of rheumatoid arthritis based on common clinical cutoffs.",
+      "reference_range": "Generally <20 U/mL"
+    }
+  ]
+}
