@@ -656,7 +656,7 @@ async def speech_to_text(file: UploadFile = File(...), language: str = "auto"):
 # -----------------------------
 @app.post("/tts")
 async def text_to_speech(req: TTSRequest):
-    """Convert text to speech using edge-tts."""
+    """Convert text to speech using edge-tts (Render-compatible)."""
     try:
         # Detect language if auto
         if req.language_code == "auto":
@@ -673,22 +673,26 @@ async def text_to_speech(req: TTSRequest):
         
         print(f"🔊 TTS Request - Language: {detected_lang}, Voice: {voice}")
         
-        # Create a temporary file for the audio
-        with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as tmp_file:
-            output_path = tmp_file.name
+        # Use BytesIO instead of temporary files (more reliable on Render)
+        audio_buffer = io.BytesIO()
         
         try:
-            # Generate speech using edge-tts
+            # Generate speech directly to BytesIO
             communicate = edge_tts.Communicate(req.text.strip(), voice)
-            await communicate.save(output_path)
             
-            # Read the generated audio file
-            with open(output_path, 'rb') as audio_file:
-                audio_data = audio_file.read()
+            # Write to BytesIO buffer
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio":
+                    audio_buffer.write(chunk["data"])
             
-            # Create BytesIO object for streaming
-            audio_buffer = io.BytesIO(audio_data)
+            # Reset buffer position for reading
             audio_buffer.seek(0)
+            
+            # Check if we got any audio data
+            if audio_buffer.getbuffer().nbytes == 0:
+                raise Exception("No audio data generated")
+            
+            print(f"✅ TTS generated {audio_buffer.getbuffer().nbytes} bytes")
             
             return StreamingResponse(
                 audio_buffer,
@@ -696,22 +700,24 @@ async def text_to_speech(req: TTSRequest):
                 headers={
                     "Content-Disposition": "inline; filename=speech.mp3",
                     "X-Language": detected_lang,
-                    "X-Voice": voice
+                    "X-Voice": voice,
+                    "Cache-Control": "no-cache"
                 }
             )
         
-        finally:
-            # Clean up temporary file
-            if os.path.exists(output_path):
-                try:
-                    os.remove(output_path)
-                except Exception as e:
-                    print(f"⚠️ Failed to delete temp file: {e}")
+        except Exception as inner_e:
+            print(f"❌ TTS generation error: {str(inner_e)}")
+            raise
     
     except Exception as e:
         print(f"❌ TTS error: {str(e)}")
-        return JSONResponse({"error": str(e)}, status_code=500)
-
+        import traceback
+        traceback.print_exc()
+        return JSONResponse({
+            "error": str(e),
+            "type": "tts_error",
+            "details": "Text-to-speech generation failed"
+        }, status_code=500)
 # -----------------------------
 #  GET AVAILABLE VOICES
 # -----------------------------
@@ -813,4 +819,5 @@ if __name__ == "__main__":
     print(f"🗣️ Default Arabic Voice: {EDGE_TTS_VOICES['ar']}")
     print(f"🎤 STT Available: {STT_AVAILABLE}")
     print("="*60 + "\n")
+
     uvicorn.run(app, host="0.0.0.0", port=8002)
